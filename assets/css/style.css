@@ -163,15 +163,15 @@ nav a:hover::after {
 }
 
 .hero {
-  background-image: url("/assets/images/home-bg.jpg");
+  background-image: url("../images/home-bg.jpg");
 }
 
 .about-hero {
-  background-image: url("/assets/images/about.jpg");
+  background-image: url("../images/about.jpg");
 }
 
 .services-hero {
-  background-image: url("/assets/images/service-bg.jpg");
+  background-image: url("../images/service-bg.jpg");
 }
 
 .hero h2,
