@@ -1,7 +1,21 @@
 {
   "version": 2,
-  "public": true,
-  "github": {
-    "enabled": false
-  }
+  "routes": [
+    {
+      "src": "/about",
+      "dest": "/about.html"
+    },
+    {
+      "src": "/services",
+      "dest": "/services.html"
+    },
+    {
+      "src": "/contact",
+      "dest": "/contact.html"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
+    }
+  ]
 }
