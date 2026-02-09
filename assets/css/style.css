@@ -103,42 +103,51 @@ nav a[aria-current="page"] {
   color: var(--primary);
 }
 
-/* ===== HERO SECTION ===== */
-/* Modern approach: Clean typography, maybe a side image or just centered text on white/light blue */
+/* ===== HERO SECTION (Split Layout) ===== */
 .hero,
 .about-hero,
 .services-hero {
-  padding: 120px 0;
+  padding: 80px 0;
   background-color: var(--bg-white);
-  text-align: center;
-  /* Removed background images for a cleaner, "less heavy" look. 
-     Images can be reintroduced as <img> elements if needed, but CSS backgrounds feel outdated/heavy. */
+  overflow: hidden;
+  /* For animations */
 }
 
-/* If we want to keep the "vibe" but lighter, maybe a very subtle wash */
-.hero {
-  background-color: var(--bg-off-white);
+/* Grid for Split Layout */
+.hero .container,
+.about-hero .container,
+.services-hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-content,
+.about-hero-content,
+.services-hero-content {
+  text-align: left;
 }
 
 .hero h2,
 .about-hero h2,
 .services-hero h2 {
-  font-size: clamp(40px, 5vw, 64px);
-  /* Fluid typography */
+  font-size: clamp(40px, 5vw, 56px);
   margin-bottom: 24px;
   color: var(--text-main);
   font-weight: 700;
   letter-spacing: -1px;
+  line-height: 1.1;
 }
 
 .hero p,
 .about-hero p,
 .services-hero p {
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: 18px;
   color: var(--text-light);
-  max-width: 600px;
-  margin: 0 auto 40px;
-  font-weight: 300;
+  margin-bottom: 32px;
+  font-weight: 400;
+  max-width: 90%;
 }
 
 .btn {
@@ -157,6 +166,98 @@ nav a[aria-current="page"] {
   background-color: var(--text-main);
   /* Modern hover: turns dark */
   color: var(--bg-white);
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  /* Modern rounded corners */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  /* Very subtle soft shadow */
+  transition: transform 0.5s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+  /* Subtle zoom on hover */
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  /* Star invisible */
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Mobile Stack */
+@media (max-width: 900px) {
+
+  .hero .container,
+  .about-hero .container,
+  .services-hero .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-content,
+  .about-hero-content,
+  .services-hero-content {
+    text-align: center;
+  }
+
+  .hero p,
+  .about-hero p,
+  .services-hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-image {
+    order: -1;
+    /* Show image first on mobile? Or keep after? Let's keep text first for SEO/CTA, or image first for vibe. Let's keep text first. */
+  }
+}
+
+/* Single Column Hero (for Contact page) */
+.hero-single .container {
+  grid-template-columns: 1fr !important;
+  text-align: center;
+}
+
+.hero-single .hero-content {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 
