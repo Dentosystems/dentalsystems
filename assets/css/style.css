@@ -10,14 +10,14 @@
   --white: #ffffff;
   --gray-100: #f8f9fa;
   --gray-200: #e9ecef;
-  
+
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-  --shadow-hover: 0 20px 25px rgba(0,0,0,0.15);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 20px 25px rgba(0, 0, 0, 0.15);
 
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -46,16 +46,23 @@ body {
   margin: auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--primary-color);
   line-height: 1.2;
-  margin-bottom: 24px; /* Increased spacing */
+  margin-bottom: 24px;
+  /* Increased spacing */
 }
 
 p {
   margin-bottom: 24px;
-  color: #4b5563; /* Slightly softer text for reading */
+  color: #4b5563;
+  /* Slightly softer text for reading */
 }
 
 a {
@@ -122,42 +129,64 @@ nav a:hover::after {
 }
 
 /* ===== HERO SECTIONS ===== */
-.hero, .about-hero, .services-hero {
+.hero,
+.about-hero,
+.services-hero {
   background-size: cover;
   background-position: center;
   color: var(--white);
-  padding: 160px 0 120px; /* More padding for impact */
+  padding: 160px 0 120px;
+  /* More padding for impact */
   text-align: center;
   position: relative;
 }
 
 /* Overlays */
-.hero::before, .about-hero::before, .services-hero::before {
+.hero::before,
+.about-hero::before,
+.services-hero::before {
   content: '';
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(135deg, rgba(11, 94, 215, 0.85), rgba(7, 44, 102, 0.7));
   z-index: 1;
 }
 
-.hero .container, .about-hero .container, .services-hero .container {
+.hero .container,
+.about-hero .container,
+.services-hero .container {
   position: relative;
   z-index: 2;
 }
 
-.hero { background-image: url("../images/home-bg.jpg"); }
-.about-hero { background-image: url("../images/about.jpg"); }
-.services-hero { background-image: url("../images/service-bg.jpg"); }
-
-.hero h2, .about-hero h2, .services-hero h2 {
-  font-size: 48px; /* Larger */
-  margin-bottom: 24px;
-  color: var(--white);
-  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+.hero {
+  background-image: url("/assets/images/home-bg.jpg");
 }
 
-.hero p, .about-hero p, .services-hero p {
+.about-hero {
+  background-image: url("/assets/images/about.jpg");
+}
+
+.services-hero {
+  background-image: url("/assets/images/service-bg.jpg");
+}
+
+.hero h2,
+.about-hero h2,
+.services-hero h2 {
+  font-size: 48px;
+  /* Larger */
+  margin-bottom: 24px;
+  color: var(--white);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero p,
+.about-hero p,
+.services-hero p {
   max-width: 700px;
   margin: 0 auto 32px;
   font-size: 20px;
@@ -179,7 +208,7 @@ nav a:hover::after {
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
   background-color: #fff;
 }
 
@@ -226,25 +255,81 @@ section {
 
 /* ===== COLORFUL SERVICES ===== */
 /* Subtle gradients for border tops could be nice, but sticking to solid specifically requested */
-.services-hero ~ section .feature { border-top-width: 6px; }
-.services-hero ~ section .feature:nth-child(1) { border-top-color: #FF6B6B; }
-.services-hero ~ section .feature:nth-child(2) { border-top-color: #4ECDC4; }
-.services-hero ~ section .feature:nth-child(3) { border-top-color: #FFE66D; }
-.services-hero ~ section .feature:nth-child(4) { border-top-color: #95E1D3; }
-.services-hero ~ section .feature:nth-child(5) { border-top-color: #FF6B9D; }
-.services-hero ~ section .feature:nth-child(6) { border-top-color: #C7CEEA; }
-.services-hero ~ section .feature:nth-child(7) { border-top-color: #FFA07A; }
-.services-hero ~ section .feature:nth-child(8) { border-top-color: #87CEEB; }
-.services-hero ~ section .feature:nth-child(9) { border-top-color: #98D8C8; }
-.services-hero ~ section .feature:nth-child(10) { border-top-color: #F7DC6F; }
-.services-hero ~ section .feature:nth-child(11) { border-top-color: #BB8FCE; }
-.services-hero ~ section .feature:nth-child(12) { border-top-color: #85C1E2; }
-.services-hero ~ section .feature:nth-child(13) { border-top-color: #F8B06D; }
-.services-hero ~ section .feature:nth-child(14) { border-top-color: #52D4A0; }
-.services-hero ~ section .feature:nth-child(15) { border-top-color: #E59B9F; }
-.services-hero ~ section .feature:nth-child(16) { border-top-color: #A6D8E7; }
-.services-hero ~ section .feature:nth-child(17) { border-top-color: #F7C59F; }
-.services-hero ~ section .feature:nth-child(18) { border-top-color: #C7BEAD; }
+.services-hero~section .feature {
+  border-top-width: 6px;
+}
+
+.services-hero~section .feature:nth-child(1) {
+  border-top-color: #FF6B6B;
+}
+
+.services-hero~section .feature:nth-child(2) {
+  border-top-color: #4ECDC4;
+}
+
+.services-hero~section .feature:nth-child(3) {
+  border-top-color: #FFE66D;
+}
+
+.services-hero~section .feature:nth-child(4) {
+  border-top-color: #95E1D3;
+}
+
+.services-hero~section .feature:nth-child(5) {
+  border-top-color: #FF6B9D;
+}
+
+.services-hero~section .feature:nth-child(6) {
+  border-top-color: #C7CEEA;
+}
+
+.services-hero~section .feature:nth-child(7) {
+  border-top-color: #FFA07A;
+}
+
+.services-hero~section .feature:nth-child(8) {
+  border-top-color: #87CEEB;
+}
+
+.services-hero~section .feature:nth-child(9) {
+  border-top-color: #98D8C8;
+}
+
+.services-hero~section .feature:nth-child(10) {
+  border-top-color: #F7DC6F;
+}
+
+.services-hero~section .feature:nth-child(11) {
+  border-top-color: #BB8FCE;
+}
+
+.services-hero~section .feature:nth-child(12) {
+  border-top-color: #85C1E2;
+}
+
+.services-hero~section .feature:nth-child(13) {
+  border-top-color: #F8B06D;
+}
+
+.services-hero~section .feature:nth-child(14) {
+  border-top-color: #52D4A0;
+}
+
+.services-hero~section .feature:nth-child(15) {
+  border-top-color: #E59B9F;
+}
+
+.services-hero~section .feature:nth-child(16) {
+  border-top-color: #A6D8E7;
+}
+
+.services-hero~section .feature:nth-child(17) {
+  border-top-color: #F7C59F;
+}
+
+.services-hero~section .feature:nth-child(18) {
+  border-top-color: #C7BEAD;
+}
 
 /* ===== CONTACT FORM ===== */
 .contact-form form {
@@ -256,7 +341,8 @@ section {
   margin: 0 auto;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 12px 16px;
   border: 2px solid var(--gray-200);
@@ -267,7 +353,8 @@ input, textarea {
   transition: border-color 0.3s ease;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border-color: var(--primary-color);
 }
@@ -309,21 +396,26 @@ label {
 }
 
 .status-open {
-  background-color: #ecfdf5; /* pastel green bg */
-  color: #047857; /* dark green text */
+  background-color: #ecfdf5;
+  /* pastel green bg */
+  color: #047857;
+  /* dark green text */
   border: 1px solid #a7f3d0;
 }
 
 .status-closed {
-  background-color: #fef2f2; /* pastel red bg */
-  color: #b91c1c; /* dark red text */
+  background-color: #fef2f2;
+  /* pastel red bg */
+  color: #b91c1c;
+  /* dark red text */
   border: 1px solid #fecaca;
 }
 
 
 /* ===== FOOTER ===== */
 footer {
-  background: #111827; /* Darker footer for contrast */
+  background: #111827;
+  /* Darker footer for contrast */
   color: var(--gray-200);
   text-align: center;
   padding: 40px 0;
@@ -331,7 +423,7 @@ footer {
 }
 
 footer p {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 14px;
   margin-bottom: 0;
 }
@@ -342,16 +434,18 @@ footer p {
     flex-direction: column;
     text-align: center;
   }
-  
+
   nav {
     margin-top: 16px;
   }
-  
+
   nav a {
     margin: 0 10px;
   }
-  
-  .hero h2, .about-hero h2, .services-hero h2 {
+
+  .hero h2,
+  .about-hero h2,
+  .services-hero h2 {
     font-size: 32px;
   }
 }
