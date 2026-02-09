@@ -25,7 +25,13 @@
   <meta property="twitter:image" content="/assets/images/home-bg.jpg">
 
   <title>Dent-o-care Dental Clinic | Home</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
 
 <body>
@@ -33,13 +39,16 @@
   <!-- HEADER / NAVIGATION -->
   <header>
     <div class="container header-container">
-      <h1>Dent-o-care dental clinic</h1>
-      <nav aria-label="Main Navigation">
-        <a href="/" aria-current="page">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/contact">Contact</a>
-      </nav>
+      <h1>Dent-o-care</h1>
+      <div class="header-right">
+        <nav aria-label="Main Navigation">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </div>
     </div>
   </header>
 
@@ -91,6 +100,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/theme.js"></script>
 </body>
 
 </html>

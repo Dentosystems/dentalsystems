@@ -7,18 +7,27 @@
     <title>Teeth Whitening - Dent-o-care</title>
     <meta name="description" content="Professional teeth whitening (Bleaching) services for a brighter smile.">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 
 <body>
     <header>
         <div class="container header-container">
             <h1>Dent-o-care</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
-            </nav>
+            <div class="header-right">
+                <nav aria-label="Main Navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </div>
         </div>
     </header>
 
@@ -55,6 +64,8 @@
             <p>&copy; 2026 Dent-o-care dental clinic. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="assets/js/theme.js"></script>
 </body>
 
 </html>
