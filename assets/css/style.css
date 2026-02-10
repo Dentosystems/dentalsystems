@@ -227,3 +227,14 @@ footer {
     font-size: 16px;
   }
 }
+
+/* ===== SERVICE IMAGE HELPERS ===== */
+.service-image {
+  width: 100%;
+  max-width: 300px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 12px auto;
+  display: block;
+}
