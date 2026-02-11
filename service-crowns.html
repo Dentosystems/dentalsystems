@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowns and Bridges - Dent-o-care</title>
+    <meta name="description" content="Restore damaged or missing teeth with high-quality Crowns and Bridges.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <h1>Dent-o-care</h1>
+            <div class="header-right">
+                <nav aria-label="Main Navigation">
+                    <a href="/">Home</a>
+                    <a href="about">About</a>
+                    <a href="services">Services</a>
+                    <a href="contact">Contact</a>
+                </nav>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-single" style="padding: 60px 0; background: var(--bg-off-white);">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Crowns & Bridges</h2>
+                    <p>Restorative solutions for a complete, functional smile.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content service-detail">
+            <div class="container">
+                <p>Returns functionality and aesthetics to damaged or missing teeth.</p>
+
+                <h3>Dental Crowns</h3>
+                <p>A crown is a "cap" that encircles a tooth or dental implant. Crowns are often needed when a large
+                    cavity threatens the health of a tooth. They are bonded to the tooth using dental cement.</p>
+
+                <h3>Dental Bridges</h3>
+                <p>A bridge is used to replace missing teeth by joining an artificial tooth permanently to adjacent
+                    teeth or dental implants.</p>
+
+                <div style="margin-top: 40px;">
+                    <a href="contact" class="btn">Book a Consultation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dent-o-care dental clinic. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>

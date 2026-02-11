@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Fillings - Dent-o-care</title>
+    <meta name="description"
+        content="High-quality composite dental fillings to restore your teeth naturally. Durable and aesthetic solutions at Dent-o-care.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <h1>Dent-o-care</h1>
+            <div class="header-right">
+                <nav aria-label="Main Navigation">
+                    <a href="/">Home</a>
+                    <a href="about">About</a>
+                    <a href="services">Services</a>
+                    <a href="contact">Contact</a>
+                </nav>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-single" style="padding: 60px 0; background: var(--bg-off-white);">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="animate-fade-up">Dental Fillings</h2>
+                    <p>Restoring decayed teeth with durable, natural-looking materials.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content service-detail">
+            <div class="container">
+                <p><strong>Dental fillings</strong> are used to repair minimal tooth fractures, tooth decay or otherwise
+                    damaged surfaces of the teeth. At Dent-o-care, we specialize in <strong>composite fillings</strong>,
+                    which are made of a tooth-colored resin that blends seamlessly with your natural smile.</p>
+
+                <h3>Why choose Composite Fillings?</h3>
+                <ul>
+                    <li><strong>Aesthetics:</strong> The color can be matched to your existing teeth.</li>
+                    <li><strong>Bonding:</strong> Composite fillings actually bond to the tooth structure, providing
+                        further support.</li>
+                    <li><strong>Versatility:</strong> Can be used to repair chipped, broken, or worn teeth.</li>
+                </ul>
+
+                <div style="margin-top: 40px;">
+                    <a href="contact" class="btn">Book a Consultation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dent-o-care dental clinic. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Tooth Extractions - Dent-o-care</title>
+    <meta name="description"
+        content="Painless and safe tooth extractions for problematic or damaged teeth. Expert care at Dent-o-care dental clinic.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <h1>Dent-o-care</h1>
+            <div class="header-right">
+                <nav aria-label="Main Navigation">
+                    <a href="/">Home</a>
+                    <a href="about">About</a>
+                    <a href="services">Services</a>
+                    <a href="contact">Contact</a>
+                </nav>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-single" style="padding: 60px 0; background: var(--bg-off-white);">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="animate-fade-up">Tooth Extractions</h2>
+                    <p>Gentle and professional removal of problematic teeth.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content service-detail">
+            <div class="container">
+                <p>While we always strive to save your natural teeth, sometimes an <strong>extraction</strong> is the
+                    best option for your overall oral health. Whether it's due to severe decay, impact (like wisdom
+                    teeth), or to make room for orthodontic treatment, we ensure the procedure is as comfortable as
+                    possible.</p>
+
+                <h3>When is an Extraction necessary?</h3>
+                <ul>
+                    <li>Severe tooth decay or infection.</li>
+                    <li>Advanced gum disease.</li>
+                    <li>Impacted wisdom teeth.</li>
+                    <li>To prepare for orthodontic treatment (braces).</li>
+                </ul>
+
+                <h3>Aftercare Care</h3>
+                <p>We provide detailed aftercare instructions to ensure a quick and smooth recovery. Our team is always
+                    available to answer any questions you have during your healing process.</p>
+
+                <div style="margin-top: 40px;">
+                    <a href="contact" class="btn">Book a Consultation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dent-o-care dental clinic. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>

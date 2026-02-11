@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Veneers - Dent-o-care</title>
+    <meta name="description"
+        content="Transform your smile with custom porcelain veneers. High-quality cosmetic dentistry at Dent-o-care.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <h1>Dent-o-care</h1>
+            <div class="header-right">
+                <nav aria-label="Main Navigation">
+                    <a href="/">Home</a>
+                    <a href="about">About</a>
+                    <a href="services">Services</a>
+                    <a href="contact">Contact</a>
+                </nav>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-single" style="padding: 60px 0; background: var(--bg-off-white);">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Dental Veneers</h2>
+                    <p>Design the perfect smile you've always wanted.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content service-detail">
+            <div class="container">
+                <p><strong>Veneers</strong> are thin, custom-made shells of tooth-colored materials designed to cover
+                    the front surface of teeth to improve your appearance. These shells are bonded to the front of the
+                    teeth changing their color, shape, size, or length.</p>
+
+                <h3>Benefits of Veneers</h3>
+                <ul>
+                    <li>Natural tooth appearance</li>
+                    <li>Gum tissue tolerates porcelain well</li>
+                    <li>Stain resistant</li>
+                    <li>Color can be selected to make dark teeth appear whiter</li>
+                </ul>
+
+                <div style="margin-top: 40px;">
+                    <a href="contact" class="btn">Book a Consultation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dent-o-care dental clinic. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
