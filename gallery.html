@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery – Dent-o-systems clinic</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- HEADER / NAVIGATION -->
+<header>
+  <div class="container header-container">
+    <h1>Dent-o-systems clinic</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="container">
+    <h2>Photo Gallery</h2>
+    <p>Explore our clinic and see the environment where we provide exceptional dental care.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="content">
+  <div class="container">
+    <div class="gallery-grid">
+      <img src="assets/images/clinic-01.jpg" alt="Clinic photo 1" class="gallery-item" onclick="openLightbox(this.src)">
+      <img src="assets/images/clinic-02.jpg" alt="Clinic photo 2" class="gallery-item" onclick="openLightbox(this.src)">
+      <img src="assets/images/clinic-03.jpg" alt="Clinic photo 3" class="gallery-item" onclick="openLightbox(this.src)">
+      <img src="assets/images/clinic-04.jpg" alt="Clinic photo 4" class="gallery-item" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX MODAL -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img" src="" alt="Full size gallery image">
+  <div class="lightbox-nav">
+    <button class="lightbox-btn prev" onclick="prevImage(event)">&#10094;</button>
+    <button class="lightbox-btn next" onclick="nextImage(event)">&#10095;</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Dent-o-systems clinic. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const galleryImages = [
+    'assets/images/clinic-01.jpg',
+    'assets/images/clinic-02.jpg',
+    'assets/images/clinic-03.jpg',
+    'assets/images/clinic-04.jpg'
+  ];
+  let currentImageIndex = 0;
+
+  function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = src;
+    lightbox.style.display = 'flex';
+    currentImageIndex = galleryImages.indexOf(src);
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+
+  function nextImage(event) {
+    event.stopPropagation();
+    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+    document.getElementById('lightbox-img').src = galleryImages[currentImageIndex];
+  }
+
+  function prevImage(event) {
+    event.stopPropagation();
+    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    document.getElementById('lightbox-img').src = galleryImages[currentImageIndex];
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(event) {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox.style.display === 'flex') {
+      if (event.key === 'ArrowRight') nextImage(event);
+      if (event.key === 'ArrowLeft') prevImage(event);
+      if (event.key === 'Escape') closeLightbox();
+    }
+  });
+</script>
+
+</body>
+</html>
