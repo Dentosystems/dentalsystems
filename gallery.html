@@ -2,24 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - Dental Systems</title>
-  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Correct CSS path -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
   <style>
     .gallery-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 40px 20px;
+      gap: 20px;
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .gallery-container img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       cursor: pointer;
+      transition: transform 0.3s ease;
     }
 
     .gallery-container img:hover {
@@ -28,33 +34,25 @@
 
     h2 {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 50px;
       color: #004aad;
     }
 
-    /* Lightbox Styles */
+    /* Lightbox */
     .lightbox {
       display: none;
       position: fixed;
-      top:0;
-      left:0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
+      inset: 0;
+      background: rgba(0,0,0,0.85);
       justify-content: center;
       align-items: center;
-      z-index: 1000;
+      z-index: 999;
     }
 
     .lightbox img {
       max-width: 90%;
-      max-height: 80%;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    }
-
-    .lightbox:target {
-      display: flex;
+      max-height: 85%;
+      border-radius: 12px;
     }
   </style>
 </head>
@@ -77,40 +75,45 @@
 
 <section class="gallery-container" id="gallery"></section>
 
-<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
-  <img id="lightbox-img" src="" alt="Enlarged Image">
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <img id="lightbox-img" src="" alt="Preview">
 </div>
 
 <script>
-const galleryContainer = document.getElementById('gallery');
+  const images = [
+    "clinic-01.jpg",
+    "clinic-02.jpg",
+    "clinic-03.jpg",
+    "clinic-04.jpg"
+  ];
 
-// List all images here in assets/images/
-const images = [
-  'clinic-01.jpg',
-  'clinic-02.jpg',
-  'clinic-03.jpg',
-  'clinic-04.jpg',
-  'clinic-05.jpg'
-];
+  const gallery = document.getElementById("gallery");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
 
-images.forEach(imgName => {
-  const img = document.createElement('img');
-  img.src = `assets/images/${imgName}`; // Path relative to HTML
-  img.alt = imgName;
+  images.forEach(name => {
+    const img = document.createElement("img");
+    img.src = `assets/images/${name}`;
+    img.alt = "Dental clinic image";
 
-  // Lightbox
-  img.onclick = () => {
-    document.getElementById('lightbox-img').src = img.src;
-    document.getElementById('lightbox').style.display = 'flex';
-  };
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
+    });
 
-  galleryContainer.appendChild(img);
-});
+    gallery.appendChild(img);
+  });
+
+  lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
 </script>
 
-
 <footer>
-  <p>&copy; 2026 Dental Systems. All Rights Reserved.</p>
+  <p style="text-align:center; padding: 20px;">
+    &copy; 2026 Dental Systems. All Rights Reserved.
+  </p>
 </footer>
 
 </body>
