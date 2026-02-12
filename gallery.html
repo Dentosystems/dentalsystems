@@ -19,6 +19,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       transition: transform 0.3s;
+      cursor: pointer;
     }
 
     .gallery-container img:hover {
@@ -29,6 +30,31 @@
       text-align: center;
       margin-top: 40px;
       color: #004aad;
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .lightbox:target {
+      display: flex;
     }
   </style>
 </head>
@@ -51,18 +77,41 @@
 
 <section class="gallery-container" id="gallery"></section>
 
+<!-- Lightbox Container -->
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+  <img id="lightbox-img" src="" alt="Enlarged Image">
+</div>
+
 <script>
-  // Number of images in your gallery
-  const imageCount = 10; // Update this to match how many images you have
+  const galleryContainer = document.getElementById('gallery');
 
-  const gallery = document.getElementById('gallery');
+  // Load all images in the assets/images folder
+  // ⚠ NOTE: JavaScript in browser cannot read local folders automatically
+  // So we need to list image names manually OR generate via backend
+  // Here's a workaround using a list of filenames:
+  const images = [
+    'clinic-01.jpg',
+    'clinic-02.jpg',
+    'clinic-03.jpg',
+    'clinic-04.jpg',
+    'clinic-05.jpg'
+    // Add all image filenames here
+  ];
 
-  for (let i = 1; i <= imageCount; i++) {
+  images.forEach(imgName => {
     const img = document.createElement('img');
-    img.src = `assets/images/clinic-${String(i).padStart(2, '0')}.jpg`;
-    img.alt = `Clinic Image ${i}`;
-    gallery.appendChild(img);
-  }
+    img.src = `assets/images/${imgName}`;
+    img.alt = imgName;
+
+    // Add click for lightbox
+    img.onclick = () => {
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = img.src;
+      document.getElementById('lightbox').style.display = 'flex';
+    };
+
+    galleryContainer.appendChild(img);
+  });
 </script>
 
 <footer>
