@@ -104,6 +104,12 @@ nav a:hover {
   font-size: 18px;
 }
 
+.hero {
+  background-image: url("../assets/images/clinic-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 /* ===== SERVICES HERO ===== */
 .services-hero {
   color: white;

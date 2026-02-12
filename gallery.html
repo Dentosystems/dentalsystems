@@ -77,42 +77,37 @@
 
 <section class="gallery-container" id="gallery"></section>
 
-<!-- Lightbox Container -->
 <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
   <img id="lightbox-img" src="" alt="Enlarged Image">
 </div>
 
 <script>
-  const galleryContainer = document.getElementById('gallery');
+const galleryContainer = document.getElementById('gallery');
 
-  // Load all images in the assets/images folder
-  // ⚠ NOTE: JavaScript in browser cannot read local folders automatically
-  // So we need to list image names manually OR generate via backend
-  // Here's a workaround using a list of filenames:
-  const images = [
-    'clinic-01.jpg',
-    'clinic-02.jpg',
-    'clinic-03.jpg',
-    'clinic-04.jpg',
-    'clinic-05.jpg'
-    // Add all image filenames here
-  ];
+// List all images here in assets/images/
+const images = [
+  'clinic-01.jpg',
+  'clinic-02.jpg',
+  'clinic-03.jpg',
+  'clinic-04.jpg',
+  'clinic-05.jpg'
+];
 
-  images.forEach(imgName => {
-    const img = document.createElement('img');
-    img.src = `assets/images/${imgName}`;
-    img.alt = imgName;
+images.forEach(imgName => {
+  const img = document.createElement('img');
+  img.src = `assets/images/${imgName}`; // Path relative to HTML
+  img.alt = imgName;
 
-    // Add click for lightbox
-    img.onclick = () => {
-      const lightboxImg = document.getElementById('lightbox-img');
-      lightboxImg.src = img.src;
-      document.getElementById('lightbox').style.display = 'flex';
-    };
+  // Lightbox
+  img.onclick = () => {
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox').style.display = 'flex';
+  };
 
-    galleryContainer.appendChild(img);
-  });
+  galleryContainer.appendChild(img);
+});
 </script>
+
 
 <footer>
   <p>&copy; 2026 Dental Systems. All Rights Reserved.</p>
