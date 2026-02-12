@@ -106,23 +106,62 @@ nav a:hover {
 
 /* ===== SERVICES HERO ===== */
 .services-hero {
-  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-              url("../images/service-bg.jpg") no-repeat center center;
-  background-size: cover;
   color: white;
-  padding: 100px 20px;
+  padding: 50px 20px;
   text-align: center;
+}
+
+.services-hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .services-hero h2 {
   font-size: 36px;
   margin-bottom: 20px;
+  color: #0b5ed7;
 }
 
 .services-hero p {
-  max-width: 700px;
-  margin: auto;
-  font-size: 18px;
+  max-width: 100%;
+  margin: 0;
+  font-size: 16px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .services-hero .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .hero-content,
+  .hero-image {
+    text-align: center;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+  }
 }
 
 /* ===== SECTIONS ===== */
@@ -171,7 +210,8 @@ section {
 
 /* ===== FEATURE CARD STYLING ===== */
 .feature-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: white;
   padding: 30px;
   border-radius: 12px;
@@ -181,11 +221,45 @@ section {
   border-top: 5px solid #0b5ed7;
   text-decoration: none;
   color: inherit;
+  min-height: 300px;
+  gap: 15px;
+}
+
+.feature-card > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-card h3 {
+  margin: 0 0 15px 0;
+  color: #0b5ed7;
+  font-size: 20px;
+}
+
+.feature-card-desc {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.read-more {
+  margin-top: auto;
+  display: inline-block;
+  color: #0b5ed7;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.feature-card:hover .read-more {
+  color: #0a4cb3;
 }
 
 /* ===== CONTENT SECTION ===== */
