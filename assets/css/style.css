@@ -464,25 +464,50 @@ footer {
 }
 /* ===== THEME VARIABLES ===== */
 
+/* ===== THEME VARIABLES ===== */
+
 :root {
   --bg-color: #ffffff;
-  --text-color: #111111;
+  --text-color: #1a1a1a;
   --primary-color: #004aad;
+  --card-bg: #f5f5f5;
 }
 
 [data-theme="dark"] {
   --bg-color: #121212;
-  --text-color: #ffffff;
+  --text-color: #f1f1f1;
   --primary-color: #4da3ff;
+  --card-bg: #1e1e1e;
 }
 
-/* Apply theme colors */
+/* Apply theme globally */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Header */
 header {
   background-color: var(--bg-color);
+}
+
+/* Navigation links */
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* Feature cards */
+.feature {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+/* Ensure feature text always readable */
+.feature h3,
+.feature p {
+  color: var(--text-color);
 }
