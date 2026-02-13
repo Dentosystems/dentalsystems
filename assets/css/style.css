@@ -514,6 +514,8 @@ nav a {
 
 /* ===== Oral Cancer Image Styling ===== */
 
+/* ===== Oral Cancer Image Styling ===== */
+
 .service-image {
   margin-top: 20px;
   text-align: center;
@@ -526,6 +528,7 @@ nav a {
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+
 /* Service/Feature text colors for dark mode */
 [data-theme="dark"] .service-card h3,
 [data-theme="dark"] .service-card p,
@@ -537,20 +540,4 @@ nav a {
 [data-theme="dark"] .service-card a {
     color: var(--primary-color);
 }
-/* Horizontal layout for a specific service card */
-.service-card-horizontal {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  border-radius: 12px;
-  background-color: var(--card-bg);
-}
-
-.service-card-image {
-  flex-shrink: 0;
-}
-
-.service-card-content {
-  flex-grow: 1;
-}
+/
