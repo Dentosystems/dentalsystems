@@ -469,14 +469,14 @@ footer {
 :root {
   --bg-color: #ffffff;
   --text-color: #1a1a1a;
-  --primary-color: #004aad;
+  --primary-color: hsla(251, 79%, 24%, 0.178);
   --card-bg: #f5f5f5;
 }
 
 [data-theme="dark"] {
-  --bg-color: #1e46ca;
+  --bg-color: #16171b;
   --text-color: #f1f1f1;
-  --primary-color: #4da3ff;
+  --primary-color: #1e1aee;
   --card-bg: #1e1e1e;
 }
 
