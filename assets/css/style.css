@@ -474,7 +474,7 @@ footer {
 }
 
 [data-theme="dark"] {
-  --bg-color: #121212;
+  --bg-color: #1e46ca;
   --text-color: #f1f1f1;
   --primary-color: #4da3ff;
   --card-bg: #1e1e1e;
