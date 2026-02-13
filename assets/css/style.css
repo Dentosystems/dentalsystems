@@ -526,3 +526,14 @@ nav a {
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+/* Service/Feature text colors for dark mode */
+[data-theme="dark"] .service-card h3,
+[data-theme="dark"] .service-card p,
+[data-theme="dark"] .service-card a {
+    color: var(--text-color);
+}
+
+/* Optional: links in dark mode */
+[data-theme="dark"] .service-card a {
+    color: var(--primary-color);
+}
