@@ -61,113 +61,30 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* ===== HOME HERO ===== */
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-              url("../images/home-hero.jpg") no-repeat center center;
-  background-size: cover;
-  color: white;
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.hero h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  max-width: 700px;
-  margin: auto;
-  font-size: 18px;
-}
-
-
-/* ===== ABOUT HERO ===== */
-.about-hero {
-  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-              url("../images/about.jpg") no-repeat center center;
-  background-size: cover;
-  color: white;
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.about-hero h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.about-hero p {
-  max-width: 700px;
-  margin: auto;
-  font-size: 18px;
-}
-
-.hero {
-  background-image: url("../assets/images/clinic-bg.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-/* ===== SERVICES HERO ===== */
-.services-hero {
-  color: white;
+/* ===== HERO SECTIONS ===== */
+.hero, .about-hero, .services-hero {
   padding: 50px 20px;
+  color: white;
   text-align: center;
 }
 
-.services-hero .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+.hero h2, .about-hero h2, .services-hero h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-.hero-content {
-  flex: 1;
-  text-align: left;
+.hero p, .about-hero p, .services-hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 18px;
 }
 
-.hero-image {
-  flex: 1;
-  text-align: right;
-}
-
+/* ===== HERO IMAGE ===== */
 .hero-image img {
   width: 100%;
   max-width: 400px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.services-hero h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #0b5ed7;
-}
-
-.services-hero p {
-  max-width: 100%;
-  margin: 0;
-  font-size: 16px;
-  color: #555;
-}
-
-@media (max-width: 768px) {
-  .services-hero .container {
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .hero-content,
-  .hero-image {
-    text-align: center;
-  }
-  
-  .hero-image img {
-    max-width: 100%;
-  }
 }
 
 /* ===== SECTIONS ===== */
@@ -180,12 +97,6 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
-}
-
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
 }
 
 .feature {
@@ -203,18 +114,7 @@ section {
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
-/* ===== COLORFUL SERVICES ===== */
-.content .grid-3 .feature-card:nth-child(1) { border-top-color: #FF6B6B; }
-.content .grid-3 .feature-card:nth-child(2) { border-top-color: #4ECDC4; }
-.content .grid-3 .feature-card:nth-child(3) { border-top-color: #FFE66D; }
-.content .grid-3 .feature-card:nth-child(4) { border-top-color: #95E1D3; }
-.content .grid-3 .feature-card:nth-child(5) { border-top-color: #FF6B9D; }
-.content .grid-3 .feature-card:nth-child(6) { border-top-color: #C7CEEA; }
-.content .grid-3 .feature-card:nth-child(7) { border-top-color: #FFA07A; }
-.content .grid-3 .feature-card:nth-child(8) { border-top-color: #87CEEB; }
-.content .grid-3 .feature-card:nth-child(9) { border-top-color: #98D8C8; }
-
-/* ===== FEATURE CARD STYLING ===== */
+/* ===== FEATURE CARD ===== */
 .feature-card {
   display: flex;
   flex-direction: column;
@@ -266,12 +166,6 @@ section {
 
 .feature-card:hover .read-more {
   color: #0a4cb3;
-}
-
-/* ===== CONTENT SECTION ===== */
-.content {
-  background: #f4f7fb;
-  padding: 50px 0;
 }
 
 /* ===== GALLERY ===== */
@@ -339,12 +233,8 @@ section {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .lightbox-content {
@@ -355,14 +245,8 @@ section {
 }
 
 @keyframes slideIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 .close {
@@ -376,10 +260,7 @@ section {
   transition: color 0.2s ease;
 }
 
-.close:hover,
-.close:focus {
-  color: #bbb;
-}
+.close:hover, .close:focus { color: #bbb; }
 
 .lightbox-nav {
   display: flex;
@@ -412,15 +293,8 @@ section {
   margin-top: 10px;
 }
 
-.status-open {
-  background-color: #28a745;
-  color: white;
-}
-
-.status-closed {
-  background-color: #dc3545;
-  color: white;
-}
+.status-open { background-color: #28a745; color: white; }
+.status-closed { background-color: #dc3545; color: white; }
 
 /* ===== FOOTER ===== */
 footer {
@@ -433,111 +307,73 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  header .container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hero h2 {
-    font-size: 24px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
+  header .container { flex-direction: column; gap: 15px; }
+  nav { flex-wrap: wrap; justify-content: center; }
+  .hero h2 { font-size: 24px; }
+  .hero p { font-size: 16px; }
 }
 
 /* ===== SERVICE IMAGE HELPERS ===== */
 .service-image {
   width: 100%;
-  max-width: 300px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin: 12px auto;
-  display: block;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  margin-bottom: 15px;
 }
-/* ===== THEME VARIABLES ===== */
+
+/* ===== SERVICE CARD FOR TEXT + IMAGE ===== */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.service-card.horizontal {
+  flex-direction: row;
+  gap: 20px;
+  text-align: left;
+}
+
+.service-card.horizontal .service-text { flex: 1; }
+.service-card.horizontal .service-image { flex: 1; }
+
+.service-text h3,
+.service-text p,
+.service-text a { color: var(--text-color); }
+
+.service-text a { color: var(--primary-color); text-decoration: none; }
+.service-text a:hover { text-decoration: underline; }
+
+/* ===== DARK MODE OVERRIDES ===== */
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .service-card.horizontal {
+  background-color: var(--card-bg);
+}
+
+[data-theme="dark"] .service-text h3,
+[data-theme="dark"] .service-text p,
+[data-theme="dark"] .service-text a {
+  color: var(--text-color);
+}
 
 /* ===== THEME VARIABLES ===== */
-
 :root {
   --bg-color: #ffffff;
   --text-color: #1a1a1a;
-  --primary-color: hsla(251, 79%, 24%, 0.178);
+  --primary-color: #0b5ed7;
   --card-bg: #f5f5f5;
 }
 
 [data-theme="dark"] {
   --bg-color: #16171b;
   --text-color: #f1f1f1;
-  --primary-color: #1e1aee;
+  --primary-color: #1e90ff;
   --card-bg: #1e1e1e;
 }
-
-/* Apply theme globally */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Header */
-header {
-  background-color: var(--bg-color);
-}
-
-/* Navigation links */
-nav a {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-/* Feature cards */
-.feature {
-  background-color: var(--card-bg);
-  padding: 20px;
-  border-radius: 12px;
-  transition: background-color 0.3s ease;
-}
-
-/* Ensure feature text always readable */
-.feature h3,
-.feature p {
-  color: var(--text-color);
-}
-
-/* ===== Oral Cancer Image Styling ===== */
-
-/* ===== Oral Cancer Image Styling ===== */
-
-.service-image {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.service-image img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-
-/* Service/Feature text colors for dark mode */
-[data-theme="dark"] .service-card h3,
-[data-theme="dark"] .service-card p,
-[data-theme="dark"] .service-card a {
-    color: var(--text-color);
-}
-
-/* Optional: links in dark mode */
-[data-theme="dark"] .service-card a {
-    color: var(--primary-color);
-}
-/
