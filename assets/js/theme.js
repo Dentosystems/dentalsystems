@@ -22,5 +22,9 @@ toggleBtn.addEventListener('click', () => {
 
 // Update the button icon/text
 function updateToggleButton(theme) {
-  toggleBtn.textContent = theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+  toggleBtn.innerHTML = theme === 'dark'
+    ? '☀️'
+    : '🌙';
 }
+
+

@@ -8,7 +8,7 @@
     content="Learn about Dent-o-care dental clinic. We are dedicated to delivering high-quality dental services with compassion and professionalism.">
   <meta name="keywords" content="about us, dental mission, dental vision, Dent-o-care profile">
 
-  <title>About Us - Dent-o-care Dental Clinic</title>
+  <title>About Us - Dent-o- systemms clinic Dental Clinic</title>
   <link rel="stylesheet" href="assets/css/style.css">
  <script>
   (function () {
@@ -36,7 +36,8 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+       <button class="theme-toggle"></button>
+
       </div>
     </div>
   </header>
@@ -95,6 +96,26 @@
   </footer>
 
   <script src="assets/js/theme.js"></script>
+  <script>
+const toggle = document.querySelector('.theme-toggle');
+
+// Set initial theme from localStorage or system preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  document.documentElement.setAttribute('data-theme', savedTheme);
+} else {
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+}
+
+toggle.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+});
+</script>
+
 </body>
 
 </html>
