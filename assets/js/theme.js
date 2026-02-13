@@ -32,12 +32,21 @@ window.toggleTheme = () => {
 };
 
 // Set theme on load
-document.addEventListener('DOMContentLoaded', () => {
-    const theme = getPreferredTheme();
-    setTheme(theme);
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.querySelector(".theme-toggle");
+  const root = document.documentElement;
 
-    const toggleBtn = document.querySelector('.theme-toggle');
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', window.toggleTheme);
-    }
+  if (!toggleBtn) return;
+
+  toggleBtn.addEventListener("click", function () {
+    const currentTheme = root.getAttribute("data-theme");
+
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+    root.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+
+    toggleBtn.textContent = newTheme === "dark" ? "☀️" : "🌙";
+  });
 });
+

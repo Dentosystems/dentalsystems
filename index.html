@@ -26,12 +26,14 @@
 
   <title>Dent-o-care Dental Clinic | Home</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <script>
-    (function () {
-      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
+ <script>
+  (function () {
+    const theme = localStorage.getItem('theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
 </head>
 
 <body>

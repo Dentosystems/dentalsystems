@@ -462,3 +462,27 @@ footer {
   margin: 12px auto;
   display: block;
 }
+/* ===== THEME VARIABLES ===== */
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --primary-color: #004aad;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #4da3ff;
+}
+
+/* Apply theme colors */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+  background-color: var(--bg-color);
+}
