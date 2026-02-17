@@ -9,16 +9,18 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #1a1a1a;
-  --primary-color: #0b5ed7;
-  --card-bg: #f5f5f5;
+  --primary-color: #00b4d8;   /* brighter dental blue */
+  --card-bg: #f8fbff;         /* slightly blue-tinted white */
 }
 
+
 [data-theme="dark"] {
-  --bg-color: #16171b;
-  --text-color: #f1f1f1;
-  --primary-color: #1e90ff;
-  --card-bg: #1e1e1e;
+  --bg-color: #0f172a;
+  --text-color: #f1f5f9;
+  --primary-color: #38bdf8;
+  --card-bg: #1e293b;
 }
+
 
 /* Apply theme colors globally */
 body {
