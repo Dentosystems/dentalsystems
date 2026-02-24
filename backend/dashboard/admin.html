@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Clinic Admin Dashboard</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<h1>Clinic Admin Dashboard</h1>
+</div>
+</header>
+
+<section class="container">
+<h2>Messages</h2>
+<div id="messages"></div>
+</section>
+
+<script>
+async function loadMessages() {
+    const res = await fetch("http://localhost:5000/messages");
+    const data = await res.json();
+
+    document.getElementById("messages").innerHTML =
+        data.map(msg =>
+            `<div class="feature-card">
+                <h3>${msg.name || "Anonymous"}</h3>
+                <p>${msg.message || ""}</p>
+             </div>`
+        ).join("");
+}
+
+loadMessages();
+</script>
+
+</body>
+</html>
