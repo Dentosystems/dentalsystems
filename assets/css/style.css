@@ -302,9 +302,39 @@ footer {
 .service-text a:hover {
   text-decoration: underline;
 }
+.appointment-section{
+padding:60px;
+text-align:center;
+}
+
+.appointment-form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea{
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.appointment-form button{
+background:#0077b6;
+color:white;
+padding:14px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
 .theme-toggle {
   background: none;
   border: none;
   font-size: 20px;
   cursor: pointer;
 }
+
