@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Dental Systems</title>
+
+  <!-- Correct CSS path -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery-container img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-container img:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 50px;
+      color: #004aad;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+  <h1>Dent-o-systems Clinic</h1>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle">🌙</button>
+
+
+   </div>
+</header>
+
+  </div>
+</header>
+
+<h2>Our Clinic Gallery</h2>
+
+<section class="gallery-container" id="gallery"></section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <img id="lightbox-img" src="" alt="Preview">
+</div>
+
+<script>
+  const images = [
+    "clinic-01.jpg",
+    "clinic-02.jpg",
+    "clinic-03.jpg",
+    "clinic-04.jpg"
+  ];
+
+  const gallery = document.getElementById("gallery");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  images.forEach(name => {
+    const img = document.createElement("img");
+    img.src = `assets/images/${name}`;
+    img.alt = "Dental clinic image";
+
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
+    });
+
+    gallery.appendChild(img);
+  });
+
+  lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+</script>
+
+<footer>
+  <p style="text-align:center; padding: 20px;">
+    &copy; 2026 Dental Systems. All Rights Reserved.
+  </p>
+</footer>
+<script src="assets/js/theme.js"></script>
+
+</body>
+</html>

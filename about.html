@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Learn about Dent-o-care dental clinic. We are dedicated to delivering high-quality dental services with compassion and professionalism.">
+  <meta name="keywords" content="about us, dental mission, dental vision, Dent-o-care profile">
+
+  <title>About Us - Dent-o- systemms clinic Dental Clinic</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+ <script>
+  (function () {
+    const theme = localStorage.getItem('theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
+</head>
+
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header>
+    <div class="container header-container">
+      <h1>Dent-o-systems Clinic</h1>
+
+      <div class="header-right">
+       <nav aria-label="Main Navigation">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+     <button class="theme-toggle">🌙</button>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="about-hero">
+      <div class="container">
+        <div class="hero-content">
+          <h2 class="animate-fade-up">About Our Clinic</h2>
+          <p class="animate-fade-up delay-100">Professional, patient-centered dental care you can trust. Our team is
+            dedicated to your oral health journey.</p>
+        </div>
+        <div class="hero-image animate-fade-up delay-200">
+          <img src="assets/images/about.jpg" alt="Dent-o-clinic Team and Facility">
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="content" aria-label="Mission and Vision">
+      <div class="container grid-2">
+
+        <article class="feature">
+          <h3>Our Mission</h3>
+          <p>
+            To deliver high-quality dental services with compassion, professionalism,
+            and modern technology while prioritizing patient comfort.
+          </p>
+        </article>
+
+        <article class="feature">
+          <h3>Our Vision</h3>
+          <p>
+            To be a trusted dental clinic known for excellence, innovation,
+            and long-lasting patient relationships.
+          </p>
+        </article>
+
+           <article class="feature">
+          <h3>Our team</h3>
+          <p>
+            Our team with over a combined 40 years of dental experience, you are sure to get quality enduring dental care.
+          </p>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Dent-o-systems clinic Dental Clinic. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/theme.js"></script>
+  <script>
+const toggle = document.querySelector('.theme-toggle');
+
+// Set initial theme from localStorage or system preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  document.documentElement.setAttribute('data-theme', savedTheme);
+} else {
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+}
+
+toggle.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+});
+</script>
+
+</body>
+
+</html>
