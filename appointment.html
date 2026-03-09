@@ -1,60 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Appointment | Dental Systems</title>
+  <title>Book Appointment - Dent-a-Clinic</title>
   <link rel="stylesheet" href="assets/css/style.css">
-</head>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <style>
+    /* Premium Appointment Form Styling */
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+    }
 
+    .hero {
+      background: #0b5ed7 url('assets/images/home-bg.jpg') no-repeat center/cover;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 18px;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: var(--card-bg);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    form label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    form input:focus, form select:focus, form textarea:focus {
+      outline: none;
+      border-color: #0b5ed7;
+      box-shadow: 0 0 10px rgba(11,94,215,0.3);
+    }
+
+    form textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    form button {
+      margin-top: 20px;
+      background-color: #0b5ed7;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    form button:hover {
+      background-color: #094bb5;
+      transform: translateY(-2px);
+    }
+
+    #form-status {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Other service input */
+    #other-service-container {
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 28px; }
+      .hero p { font-size: 16px; }
+      .container { padding: 25px; }
+    }
+  </style>
+</head>
 <body>
 
-<!-- NAVBAR -->
-<header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="appointment.html">Appointment</a>
-  </nav>
-</header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Book Your Dental Appointment</h2>
+    <p>Luxury care for your smile. Fill the form and we'll contact you shortly.</p>
+  </section>
 
-<!-- APPOINTMENT SECTION -->
-<section class="appointment-section">
+  <!-- Appointment Form -->
+  <div class="container">
+    <form id="appointment-form">
+      <label for="name">Full Name*</label>
+      <input type="text" id="name" name="name" placeholder="John Doe" required />
 
-<h1>Book an Appointment</h1>
+      <label for="email">Email*</label>
+      <input type="email" id="email" name="email" placeholder="example@mail.com" required />
 
-<form class="appointment-form">
+      <label for="phone">Phone*</label>
+      <input type="tel" id="phone" name="phone" placeholder="+254 700 000 000" required />
 
-<input type="text" placeholder="Full Name" required>
+      <label for="service">Service*</label>
+      <select id="service" name="service" required>
+        <option value="">Select Service</option>
+        <option value="Dental Cleaning">Dental Cleaning</option>
+        <option value="Teeth Whitening">Teeth Whitening</option>
+        <option value="Dental Implants">Dental Implants</option>
+        <option value="Consultation">Consultation</option>
+        <option value="other">Other</option>
+      </select>
 
-<input type="email" placeholder="Email Address" required>
+      <div id="other-service-container" style="display:none;">
+        <label for="other-service">Please specify your service</label>
+        <input type="text" id="other-service" name="other-service" placeholder="Describe your service" />
+      </div>
 
-<input type="tel" placeholder="Phone Number" required>
+      <label for="date">Preferred Date*</label>
+      <input type="date" id="date" name="date" required min="<?php echo date('Y-m-d'); ?>" />
 
-<select required>
-<option value="">Select Service</option>
-<option>Dental Cleaning</option>
-<option>Teeth Whitening</option>
-<option>Dental Implants</option>
-<option>Consultation</option>
-</select>
+      <label for="time">Preferred Time*</label>
+      <input type="time" id="time" name="time" required min="08:00" max="20:00" />
 
-<input type="date" required>
+      <label for="message">Additional Message</label>
+      <textarea id="message" name="message" placeholder="Any additional details..."></textarea>
 
-<textarea placeholder="Additional Message"></textarea>
+      <button type="submit">Book Appointment</button>
+    </form>
 
-<button type="submit">Book Appointment</button>
+    <div id="form-status"></div>
+  </div>
 
-</form>
+  <script>
+    // Initialize EmailJS
+    emailjs.init("YOUR_PUBLIC_KEY"); // replace with your key
 
-</section>
+    const form = document.getElementById("appointment-form");
+    const serviceSelect = document.getElementById("service");
+    const otherContainer = document.getElementById("other-service-container");
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Dental Systems. All rights reserved.</p>
-</footer>
+    serviceSelect.addEventListener("change", () => {
+      otherContainer.style.display = serviceSelect.value === "other" ? "block" : "none";
+    });
 
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const serviceText = serviceSelect.value === "other" 
+        ? document.getElementById("other-service").value
+        : serviceSelect.value;
+
+      const templateParams = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        service: serviceText,
+        date: document.getElementById("date").value,
+        time: document.getElementById("time").value,
+        message: document.getElementById("message").value
+      };
+
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+        .then(() => {
+          document.getElementById("form-status").innerText = "Appointment booked! We'll contact you soon.";
+          form.reset();
+          otherContainer.style.display = "none";
+        }, (err) => {
+          document.getElementById("form-status").innerText = "Error sending booking. Please try again.";
+          console.error(err);
+        });
+    });
+  </script>
 </body>
 </html>
