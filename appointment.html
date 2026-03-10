@@ -1,217 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Appointment - Dent-a-Clinic</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <style>
-    /* Premium Appointment Form Styling */
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      margin: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Appointment - Dent-o-systems Clinic</title>
 
-    .hero {
-      background: #0b5ed7 url('assets/images/home-bg.jpg') no-repeat center/cover;
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-    }
+<link rel="stylesheet" href="assets/css/style.css">
 
-    .hero h2 {
-      font-size: 36px;
-      margin-bottom: 15px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-    .hero p {
-      font-size: 18px;
-      text-shadow: 0 1px 6px rgba(0,0,0,0.3);
-    }
+<style>
+body{
+font-family:"Segoe UI",Arial,sans-serif;
+background-color:var(--bg-color);
+color:var(--text-color);
+margin:0;
+}
 
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: var(--card-bg);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
+.hero{
+background:#0b5ed7 url('assets/images/home-bg.jpg') no-repeat center/cover;
+color:white;
+padding:80px 20px;
+text-align:center;
+border-bottom-left-radius:20px;
+border-bottom-right-radius:20px;
+}
 
-    form label {
-      display: block;
-      margin: 15px 0 5px;
-      font-weight: 600;
-    }
+.hero h2{
+font-size:36px;
+margin-bottom:15px;
+text-shadow:0 2px 8px rgba(0,0,0,0.3);
+}
 
-    form input, form select, form textarea {
-      width: 100%;
-      padding: 12px 15px;
-      border: 1px solid #ccc;
-      border-radius: 12px;
-      font-size: 16px;
-      transition: all 0.3s ease;
-    }
+.hero p{
+font-size:18px;
+text-shadow:0 1px 6px rgba(0,0,0,0.3);
+}
 
-    form input:focus, form select:focus, form textarea:focus {
-      outline: none;
-      border-color: #0b5ed7;
-      box-shadow: 0 0 10px rgba(11,94,215,0.3);
-    }
+.container{
+max-width:800px;
+margin:40px auto;
+background-color:var(--card-bg);
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
 
-    form textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
+form label{
+display:block;
+margin:15px 0 5px;
+font-weight:600;
+}
 
-    form button {
-      margin-top: 20px;
-      background-color: #0b5ed7;
-      color: white;
-      border: none;
-      padding: 15px 25px;
-      font-size: 18px;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
+form input,
+form select,
+form textarea{
+width:100%;
+padding:12px 15px;
+border:1px solid #ccc;
+border-radius:12px;
+font-size:16px;
+transition:all 0.3s ease;
+}
 
-    form button:hover {
-      background-color: #094bb5;
-      transform: translateY(-2px);
-    }
+form input:focus,
+form select:focus,
+form textarea:focus{
+outline:none;
+border-color:#0b5ed7;
+box-shadow:0 0 10px rgba(11,94,215,0.3);
+}
 
-    #form-status {
-      margin-top: 20px;
-      font-weight: bold;
-      text-align: center;
-    }
+form textarea{
+min-height:100px;
+resize:vertical;
+}
 
-    /* Other service input */
-    #other-service-container {
-      margin-top: 10px;
-    }
+form button{
+margin-top:20px;
+background-color:#0b5ed7;
+color:white;
+border:none;
+padding:15px 25px;
+font-size:18px;
+border-radius:12px;
+cursor:pointer;
+transition:background-color 0.3s ease, transform 0.2s ease;
+}
 
-    @media (max-width: 600px) {
-      .hero h2 { font-size: 28px; }
-      .hero p { font-size: 16px; }
-      .container { padding: 25px; }
-    }
-  </style>
+form button:hover{
+background-color:#094bb5;
+transform:translateY(-2px);
+}
+
+#form-status{
+margin-top:20px;
+font-weight:bold;
+text-align:center;
+}
+
+#other-service-container{
+margin-top:10px;
+}
+
+@media (max-width:600px){
+
+.hero h2{
+font-size:28px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.container{
+padding:25px;
+}
+
+}
+</style>
+
 </head>
+
 <body>
-<header>
-    <!-- HEADER -->
-<header>
-  <div class="logo">Dent-o-systems Clinic</div>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="appointment.html">Book Appointment</a></li>
-    </ul>
-  </nav>
+<!-- HEADER -->
+<header>
 
-  <button id="theme-toggle">🌙</button>
+<div class="logo">Dent-o-systems Clinic</div>
+
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="appointment.html">Book Appointment</a></li>
+</ul>
+</nav>
+
+<button id="theme-toggle">🌙</button>
+
 </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>Book Your Dental Appointment</h2>
-    <p>Luxury care for your smile. Fill the form and we'll contact you shortly.</p>
-  </section>
+<!-- HERO -->
 
-  <!-- Appointment Form -->
-  <div class="container">
-    <form id="appointment-form">
-      <label for="name">Full Name*</label>
-      <input type="text" id="name" name="name" placeholder="John Doe" required />
+<section class="hero">
 
-      <label for="email">Email*</label>
-      <input type="email" id="email" name="email" placeholder="example@mail.com" required />
+<h2>Book Your Dental Appointment</h2>
 
-      <label for="phone">Phone*</label>
-      <input type="tel" id="phone" name="phone" placeholder="+254 700 000 000" required />
+<p>Luxury care for your smile. Fill the form and we'll contact you shortly.</p>
 
-      <label for="service">Service*</label>
-      <select id="service" name="service" required>
-        <option value="">Select Service</option>
-        <option value="Dental Cleaning">Dental Cleaning</option>
-        <option value="Teeth Whitening">Teeth Whitening</option>
-        <option value="Dental Implants">Dental Implants</option>
-        <option value="Consultation">Consultation</option>
-        <option value="other">Other</option>
-      </select>
+</section>
 
-      <div id="other-service-container" style="display:none;">
-        <label for="other-service">Please specify your service</label>
-        <input type="text" id="other-service" name="other-service" placeholder="Describe your service" />
-      </div>
+<!-- FORM -->
 
-      <label for="date">Preferred Date*</label>
-      <input type="date" id="date" name="date" required min="<?php echo date('Y-m-d'); ?>" />
+<div class="container">
 
-      <label for="time">Preferred Time*</label>
-      <input type="time" id="time" name="time" required min="08:00" max="20:00" />
+<form id="appointment-form">
 
-      <label for="message">Additional Message</label>
-      <textarea id="message" name="message" placeholder="Any additional details..."></textarea>
+<label>Full Name*</label>
+<input type="text" id="name" placeholder="John Doe" required>
 
-      <button type="submit">Book Appointment</button>
-    </form>
+<label>Email*</label>
+<input type="email" id="email" placeholder="example@mail.com" required>
 
-    <div id="form-status"></div>
-  </div>
+<label>Phone*</label>
+<input type="tel" id="phone" placeholder="+254 700 000 000" required>
 
-  <script>
-    // Initialize EmailJS
-    emailjs.init("YOUR_PUBLIC_KEY"); // replace with your key
+<label>Service*</label>
 
-    const form = document.getElementById("appointment-form");
-    const serviceSelect = document.getElementById("service");
-    const otherContainer = document.getElementById("other-service-container");
+<select id="service" required>
 
-    serviceSelect.addEventListener("change", () => {
-      otherContainer.style.display = serviceSelect.value === "other" ? "block" : "none";
-    });
+<option value="">Select Service</option>
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
+<option value="Dental Cleaning">Dental Cleaning</option>
 
-      const serviceText = serviceSelect.value === "other" 
-        ? document.getElementById("other-service").value
-        : serviceSelect.value;
+<option value="Teeth Whitening">Teeth Whitening</option>
 
-      const templateParams = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        service: serviceText,
-        date: document.getElementById("date").value,
-        time: document.getElementById("time").value,
-        message: document.getElementById("message").value
-      };
+<option value="Dental Implants">Dental Implants</option>
 
-      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
-        .then(() => {
-          document.getElementById("form-status").innerText = "Appointment booked! We'll contact you soon.";
-          form.reset();
-          otherContainer.style.display = "none";
-        }, (err) => {
-          document.getElementById("form-status").innerText = "Error sending booking. Please try again.";
-          console.error(err);
-        });
-    });
-  </script>
+<option value="Consultation">Consultation</option>
+
+<option value="other">Other</option>
+
+</select>
+
+<div id="other-service-container" style="display:none">
+
+<label>Please specify your service</label>
+
+<input type="text" id="other-service" placeholder="Describe your service">
+
+</div>
+
+<label>Preferred Date*</label>
+
+<input type="date" id="date" required>
+
+<label>Preferred Time*</label>
+
+<input type="time" id="time" required min="08:00" max="20:00">
+
+<label>Additional Message</label>
+
+<textarea id="message" placeholder="Any additional details..."></textarea>
+
+<button type="submit">Book Appointment</button>
+
+</form>
+
+<div id="form-status"></div>
+
+</div>
+
+<script>
+
+emailjs.init("YOUR_PUBLIC_KEY")
+
+const form=document.getElementById("appointment-form")
+
+const serviceSelect=document.getElementById("service")
+
+const otherContainer=document.getElementById("other-service-container")
+
+serviceSelect.addEventListener("change",()=>{
+
+otherContainer.style.display=serviceSelect.value==="other"?"block":"none"
+
+})
+
+form.addEventListener("submit",function(e){
+
+e.preventDefault()
+
+const serviceText=serviceSelect.value==="other"
+
+?document.getElementById("other-service").value
+
+:serviceSelect.value
+
+const templateParams={
+
+name:document.getElementById("name").value,
+
+email:document.getElementById("email").value,
+
+phone:document.getElementById("phone").value,
+
+service:serviceText,
+
+date:document.getElementById("date").value,
+
+time:document.getElementById("time").value,
+
+message:document.getElementById("message").value
+
+}
+
+emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",templateParams)
+
+.then(()=>{
+
+document.getElementById("form-status").innerText="Appointment booked! We'll contact you soon."
+
+form.reset()
+
+otherContainer.style.display="none"
+
+},
+
+(err)=>{
+
+document.getElementById("form-status").innerText="Error sending booking. Please try again."
+
+console.error(err)
+
+})
+
+})
+
+</script>
+
 </body>
+
 </html>
