@@ -11,16 +11,15 @@
 
 <style>
 body{
-  font-family:"Segoe UI",Arial,sans-serif;
-  background: linear-gradient(135deg,#0b5ed7,#031633);
-  color:var(--text-color);
-  margin:0;
+font-family:"Segoe UI",Arial,sans-serif;
+background: linear-gradient(135deg,#0b5ed7,#031633);
+color:var(--text-color);
+margin:0;
 }
-
 
 .hero{
 background:#072a5f url('assets/images/home-bg.jpg') no-repeat center/cover;
-color:rgb(46, 106, 235);
+color:white;
 padding:80px 20px;
 text-align:center;
 border-bottom-left-radius:20px;
@@ -105,19 +104,9 @@ margin-top:10px;
 }
 
 @media (max-width:600px){
-
-.hero h2{
-font-size:28px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.container{
-padding:25px;
-}
-
+.hero h2{font-size:28px;}
+.hero p{font-size:16px;}
+.container{padding:25px;}
 }
 </style>
 
@@ -125,9 +114,7 @@ padding:25px;
 
 <body>
 
-<!-- HEADER -->
 <header>
-
 <div class="logo">Dent-o-systems Clinic</div>
 
 <nav>
@@ -142,71 +129,49 @@ padding:25px;
 </nav>
 
 <button id="theme-toggle">🌙</button>
-
 </header>
 
-<!-- HERO -->
-
 <section class="hero">
-
 <h2>Book Your Dental Appointment</h2>
-
 <p>Luxury care for your smile. Fill the form and we'll contact you shortly.</p>
-
 </section>
-
-<!-- FORM -->
 
 <div class="container">
 
 <form id="appointment-form">
 
 <label>Full Name*</label>
-<input type="text" id="name" placeholder="John Doe" required>
+<input type="text" id="name" name="name" placeholder="John Doe" required>
 
 <label>Email*</label>
-<input type="email" id="email" placeholder="example@mail.com" required>
+<input type="email" id="email" name="email" placeholder="example@mail.com" required>
 
 <label>Phone*</label>
-<input type="tel" id="phone" placeholder="+254 700 000 000" required>
+<input type="tel" id="phone" name="phone" placeholder="+254 700 000 000" required>
 
 <label>Service*</label>
-
-<select id="service" required>
-
+<select id="service" name="service" required>
 <option value="">Select Service</option>
-
 <option value="Dental Cleaning">Dental Cleaning</option>
-
 <option value="Teeth Whitening">Teeth Whitening</option>
-
 <option value="Dental Implants">Dental Implants</option>
-
 <option value="Consultation">Consultation</option>
-
 <option value="other">Other</option>
-
 </select>
 
 <div id="other-service-container" style="display:none">
-
 <label>Please specify your service</label>
-
-<input type="text" id="other-service" placeholder="Describe your service">
-
+<input type="text" id="other-service" name="other_service" placeholder="Describe your service">
 </div>
 
 <label>Preferred Date*</label>
-
-<input type="date" id="date" required>
+<input type="date" id="date" name="date" required>
 
 <label>Preferred Time*</label>
-
-<input type="time" id="time" required min="08:00" max="20:00">
+<input type="time" id="time" name="time" required min="08:00" max="20:00">
 
 <label>Additional Message</label>
-
-<textarea id="message" placeholder="Any additional details..."></textarea>
+<textarea id="message" name="message" placeholder="Any additional details..."></textarea>
 
 <button type="submit">Book Appointment</button>
 
@@ -218,87 +183,61 @@ padding:25px;
 
 <script>
 
-
 (function(){
 emailjs.init("i1Iw_hpp3UMdHPzTe");
 })();
 
+const form = document.getElementById("appointment-form");
+const serviceSelect = document.getElementById("service");
+const otherContainer = document.getElementById("other-service-container");
 
-const form=document.getElementById("appointment-form")
+serviceSelect.addEventListener("change", () => {
+otherContainer.style.display = serviceSelect.value === "other" ? "block" : "none";
+});
 
+form.addEventListener("submit", function(e){
 
+e.preventDefault();
 
-const form=document.getElementById("appointment-form")
+const serviceText = serviceSelect.value === "other"
+? document.getElementById("other-service").value
+: serviceSelect.value;
 
-const serviceSelect=document.getElementById("service")
-
-const otherContainer=document.getElementById("other-service-container")
-
-serviceSelect.addEventListener("change",()=>{
-
-otherContainer.style.display=serviceSelect.value==="other"?"block":"none"
-
-})
-
-form.addEventListener("submit",function(e){
-
-e.preventDefault()
-
-const serviceText=serviceSelect.value==="other"
-
-?document.getElementById("other-service").value
-
-:serviceSelect.value
-
-const templateParams={
-
-name:document.getElementById("name").value,
-
-email:document.getElementById("email").value,
-
-phone:document.getElementById("phone").value,
-
-service:serviceText,
-
-date:document.getElementById("date").value,
-
-time:document.getElementById("time").value,
-
-message:document.getElementById("message").value
-
-}
+const templateParams = {
+name: document.getElementById("name").value,
+email: document.getElementById("email").value,
+phone: document.getElementById("phone").value,
+service: serviceText,
+date: document.getElementById("date").value,
+time: document.getElementById("time").value,
+message: document.getElementById("message").value
+};
 
 emailjs.send("service_gr3izvo","template_tkfesvs",templateParams)
 
-.then(()=>{
+.then(() => {
 
-document.getElementById("form-status").innerText="Appointment booked! We'll contact you soon."
+document.getElementById("form-status").innerText = "Appointment booked! We'll contact you soon.";
 
-form.reset()
+form.reset();
 
-otherContainer.style.display="none"
+otherContainer.style.display = "none";
 
 },
 
-(err)=>{
+(err) => {
 
-document.getElementById("form-status").innerText="Error sending booking. Please try again."
+document.getElementById("form-status").innerText = "Error sending booking. Please try again.";
 
-console.error(err)
+console.error(err);
 
-})
+});
 
-})
+});
 
 </script>
 
 <script src="assets/js/theme.js"></script>
 
-
-
 </body>
-</html>
-
-</body>
-
 </html>
