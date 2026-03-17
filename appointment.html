@@ -205,13 +205,16 @@ const serviceText = serviceSelect.value === "other"
 
 const templateParams = {
 name: document.getElementById("name").value,
-email: document.getElementById("email").value,
-phone: document.getElementById("phone").value,
-service: serviceText,
-date: document.getElementById("date").value,
-time: document.getElementById("time").value,
-message: document.getElementById("message").value
-};
+
+message:
+"Patient Name: " + document.getElementById("name").value + "\n" +
+"Email: " + document.getElementById("email").value + "\n" +
+"Phone: " + document.getElementById("phone").value + "\n" +
+"Service: " + serviceText + "\n" +
+"Date: " + document.getElementById("date").value + "\n" +
+"Time: " + document.getElementById("time").value + "\n\n" +
+"Message: " + document.getElementById("message").value
+}
 
 emailjs.send("service_gr3izvo","template_tkfesvs",templateParams)
 
